@@ -30,3 +30,9 @@ steps:
   inputs:
     filePath: '$(System.DefaultWorkingDirectory)\build.ps1'
     arguments: '-TaskList "Init"'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'Hello_World_Artifact'
+    publishLocation: 'pipeline'
